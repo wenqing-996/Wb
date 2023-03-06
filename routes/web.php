@@ -16,3 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/someData', function ($someData) {
+    return view('welcome', ['someData' => $someData]);
+});
+
+Route::get('/home', function () {
+    return"This is the home page";
+});
+
+Route::get('/anotherhome', function () {
+    return"This is the anotherhome page";
+});
+
+Route::get('User/{id?}', function ($id = 'wen qing') {
+    return"User page".$id;
+});
